@@ -22,7 +22,6 @@ class ActorFakerSeeder extends Seeder
                 'country' => $faker->country,
                 'img_url' => $faker->imageUrl(640, 480),
                 'created_at' => now(),
-                'updated_at' => now(),
             ]);
         };
     }

@@ -28,7 +28,6 @@ class FilmActorSeeder extends Seeder
                     'film_id' => $filmId,
                     'actor_id' => $actors[$actorIndex],
                     'created_at' => now(),
-                    'updated_at' => now(),
                 ]);
             }
         }
