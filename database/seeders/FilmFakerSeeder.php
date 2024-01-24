@@ -23,7 +23,6 @@ class FilmFakerSeeder extends Seeder
                 'duration' => $faker->numberBetween(60, 240),
                 'img_url' => $faker->imageUrl(640, 480),
                 'created_at' => now(),
-                'updated_at' => now(),
             ]);
         };
     }
