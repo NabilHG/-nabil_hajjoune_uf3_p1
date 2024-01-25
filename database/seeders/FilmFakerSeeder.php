@@ -22,7 +22,6 @@ class FilmFakerSeeder extends Seeder
                 'country' => $faker->country,
                 'duration' => $faker->numberBetween(60, 240),
                 'img_url' => $faker->imageUrl(640, 480),
-                'agencia' => $faker->company, // filling this field with randoms names of companys
                 'created_at' => now(),
             ]);
         };

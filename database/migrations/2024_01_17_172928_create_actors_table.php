@@ -18,6 +18,7 @@ return new class extends Migration
             $table->date('birthdate');
             $table->string('country', 30);
             $table->string('img_url', 255);
+            $table->string('agencia', 100); // New field 'agencia' with max lengh 100 char
             $table->timestamps();
         });
     }
