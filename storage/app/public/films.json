@@ -1,0 +1,83 @@
+[
+    {
+      "name": "The Shawshank Redemption",
+      "year": 1994,
+      "genre": "Drama",
+      "country": "USA",
+      "duration": 142,
+      "img_url": "https://example.com/shawshank_redemption.jpg"
+    },
+    {
+      "name": "The Godfather",
+      "year": 1972,
+      "genre": "Crime",
+      "country": "USA",
+      "duration": 175,
+      "img_url": "https://example.com/godfather.jpg"
+    },
+    {
+      "name": "The Dark Knight",
+      "year": 2008,
+      "genre": "Action",
+      "country": "USA",
+      "duration": 152,
+      "img_url": "https://example.com/dark_knight.jpg"
+    },
+    {
+      "name": "Schindler's List",
+      "year": 1993,
+      "genre": "Biography",
+      "country": "USA",
+      "duration": 195,
+      "img_url": "https://example.com/schindlers_list.jpg"
+    },
+    {
+      "name": "Pulp Fiction",
+      "year": 1994,
+      "genre": "Crime",
+      "country": "USA",
+      "duration": 154,
+      "img_url": "https://example.com/pulp_fiction.jpg"
+    },
+    {
+      "name": "The Lord of the Rings: The Return of the King",
+      "year": 2003,
+      "genre": "Adventure",
+      "country": "USA",
+      "duration": 201,
+      "img_url": "https://example.com/lotr_return_of_the_king.jpg"
+    },
+    {
+      "name": "Fight Club",
+      "year": 1999,
+      "genre": "Drama",
+      "country": "USA",
+      "duration": 139,
+      "img_url": "https://example.com/fight_club.jpg"
+    },
+    {
+      "name": "Forrest Gump",
+      "year": 1994,
+      "genre": "Romance",
+      "country": "USA",
+      "duration": 142,
+      "img_url": "https://example.com/forrest_gump.jpg"
+    },
+    {
+      "name": "Inception",
+      "year": 2010,
+      "genre": "Sci-Fi",
+      "country": "USA",
+      "duration": 148,
+      "img_url": "https://example.com/inception.jpg"
+    },
+    {
+      "name": "The Matrix",
+      "year": 1999,
+      "genre": "Action",
+      "country": "USA",
+      "duration": 136,
+      "img_url": "https://example.com/matrix.jpg"
+    }
+  ]
+  

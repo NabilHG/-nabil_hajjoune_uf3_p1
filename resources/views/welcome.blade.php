@@ -28,16 +28,39 @@
     </div>
     <div class="container">
         <div class="row">
-            <div class="col">
-                <h1 class="mt-5">Link's list</h1>
-                <div class="list-group">
-                    <a href="/filmout/oldFilms" class="list-group-item list-group-item-action list-group-item-info">Old films</a>
-                    <a href="/filmout/newFilms" class="list-group-item list-group-item-action list-group-item-info">New films</a>
-                    <a href="/filmout/films" class="list-group-item list-group-item-action list-group-item-info">All films</a>
-                    <a href="/filmout/countFilms" class="list-group-item list-group-item-action list-group-item-info">Count films</a>
+            <div class="col-6">
+                <div class="row">
+                    <div class="col">
+                        <h1 class="mt-5">Link's list</h1>
+                        <div class="list-group">
+                            <a href="/filmout/oldFilms" class="list-group-item list-group-item-action list-group-item-info">Old films</a>
+                            <a href="/filmout/newFilms" class="list-group-item list-group-item-action list-group-item-info">New films</a>
+                            <a href="/filmout/films" class="list-group-item list-group-item-action list-group-item-info">All films</a>
+                            <a href="/filmout/countFilms" class="list-group-item list-group-item-action list-group-item-info">Count films</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <h1 class="mt-5">Link's list</h1>
+                        <div class="list-group">
+                            <a href="/actorout/actors" class="list-group-item list-group-item-action list-group-item-info">Actors</a>
+                            Década de nacimiento: 
+                            <select name="decade" id="decade" onchange="window.location.href = '/actorout/listActorsByDecade/' + this.value;">
+                                <option value="1980">1980-1989</option>
+                                <option value="1990">1990-1999</option>
+                                <option value="2000">2000-2009</option>
+                                <option value="2010">2010-2019</option>
+                                <option value="2020">2020-2029</option>
+                            </select>
+                            <a href="{{ url('/actorout/listActorsByDecade/1980') }}" class="list-group-item list-group-item-action list-group-item-info">Buscar por década</a>
+                            <a href="/actorout/countActors" class="list-group-item list-group-item-action list-group-item-info">Count actors</a>
+                            <a href="/actorout/actors/{id}" class="list-group-item list-group-item-action list-group-item-info">Delete actor</a>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div class="col">
+            <div class="col-6">
                 <h1 class="mt-5">¡Create a film!</h1>
                 <form action="{{ route('createFilm') }}" method="post">
                     @csrf
