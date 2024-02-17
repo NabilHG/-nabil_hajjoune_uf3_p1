@@ -38,3 +38,13 @@ Route::middleware('url')->group(function () {
         Route::post('createFilm', [FilmController::class, "createFilm"])->name('createFilm');
     });
 });
+
+
+//Actor's routes
+Route::group(['prefix' => 'actorout'], function () {
+    // Routes included with prefix "actorout"
+    Route::get('actors', [FilmController::class, "listActors"])->name('listActors');
+    Route::get('listActorsByDecade/{year}', [FilmController::class, "listActorsByDecade"])->name('listActorsByDecade');
+    Route::get('countActors', [FilmController::class, "countFilms"])->name('countActors');
+    Route::get('deleteActor/{id}', [FilmController::class, "deleteActor"])->name('deleteActor');
+});
