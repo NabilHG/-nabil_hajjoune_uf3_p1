@@ -42,7 +42,7 @@ class ActorController extends Controller
         
         // Calculate the start and end dates of the provided decade
         $startDate = "{$year}-01-01";
-        $endDate = date('Y-m-d', strtotime("+10 years", strtotime($startDate)));
+        $endDate = date('Y-m-d', strtotime("+9 years", strtotime($startDate)));
 
         // Query to retrieve actors born within the provided decade
         $actors = DB::table('actors')
