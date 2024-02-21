@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\DB;
+use App\Models\Film;
 
 class FilmController extends Controller
 {
@@ -21,9 +22,10 @@ class FilmController extends Controller
         $filmsJson = Storage::json('/public/films.json');
 
         // Read films from the database
-        $filmsDB = DB::table('films')->get();
+        // $filmsDB = DB::table('films')->get();
+        $filmsDB = Film::all();
         $filmsDB = json_decode(json_encode($filmsDB), true);
-
+        // dd($filmsDB);
         // Merge films from JSON and database
         $films = array_merge($filmsJson, $filmsDB);
 
@@ -243,14 +245,14 @@ class FilmController extends Controller
             $img_url = $request->input('img_url');
 
             // Insert data into the corresponding table using Query Builder
-            $as = DB::table('films')->insert([
-                'name' => $name,
-                'year' => $year,
-                'genre' => $genre,
-                'country' => $country,
-                'duration' => $duration,
-                'img_url' => $img_url,
-            ]);
+            $film = new Film();
+            $film->name = $name;
+            $film->year = $year;
+            $film->genre = $genre;
+            $film->country = $country;
+            $film->duration = $duration;
+            $film->img_url = $img_url;
+            $film->save();
 
             $films = FilmController::readFilms();
             return ['',  'data' => ["films" => $films, "title" => $title], 'view' => 'films.list'];

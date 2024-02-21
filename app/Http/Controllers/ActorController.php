@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\DB;
-
+use App\Models\Actor;
 class ActorController extends Controller
 {
 
@@ -20,7 +20,8 @@ class ActorController extends Controller
         $title = "List of all actors";
 
         // Retrieve all actors from the database
-        $actors = DB::table('actors')->get();
+        // $actors = DB::table('actors')->get();
+        $actors = Actor::all();
 
         // Convert the retrieved actors to an array
         $actors = json_decode(json_encode($actors), true);
@@ -45,10 +46,11 @@ class ActorController extends Controller
         $endDate = date('Y-m-d', strtotime("+9 years", strtotime($startDate)));
 
         // Query to retrieve actors born within the provided decade
-        $actors = DB::table('actors')
-            ->whereBetween('birthdate', [$startDate, $endDate])
-            ->get();
+        // $actors = DB::table('actors')
+        //     ->whereBetween('birthdate', [$startDate, $endDate])
+        //     ->get();
             
+        $actors = Actor::whereBetween('birthdate', [$startDate, $endDate])->get();
         // Convert the retrieved actors to an array
         $actors = json_decode(json_encode($actors), true);
 
@@ -67,7 +69,8 @@ class ActorController extends Controller
         $title = "Number of Actors";
 
         // Count the total number of actors in the database
-        $actors = count(DB::table('actors')->get());
+        // $actors = count(DB::table('actors')->get());
+        $actors = Actor::count();
 
         // Pass the count of actors and title to the view and return the view
         return view('actors.count', ["actors" => $actors, "title" => $title]);
@@ -83,7 +86,8 @@ class ActorController extends Controller
     public function deleteActor($id, Request $request)
     {
         // Attempt to delete the actor by its ID
-        $deleted = DB::table('actors')->where('id', $id)->delete();
+        // $deleted = DB::table('actors')->where('id', $id)->delete();
+        $deleted = Actor::where('id', $id)->delete();
 
         // Check if the actor was deleted successfully
         if ($deleted) {
