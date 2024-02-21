@@ -245,14 +245,14 @@ class FilmController extends Controller
             $img_url = $request->input('img_url');
 
             // Insert data into the corresponding table using Query Builder
-            $as = DB::table('films')->insert([
-                'name' => $name,
-                'year' => $year,
-                'genre' => $genre,
-                'country' => $country,
-                'duration' => $duration,
-                'img_url' => $img_url,
-            ]);
+            $film = new Film();
+            $film->name = $name;
+            $film->year = $year;
+            $film->genre = $genre;
+            $film->country = $country;
+            $film->duration = $duration;
+            $film->img_url = $img_url;
+            $film->save();
 
             $films = FilmController::readFilms();
             return ['',  'data' => ["films" => $films, "title" => $title], 'view' => 'films.list'];
