@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\DB;
+use App\Models\Film;
 
 class FilmController extends Controller
 {
@@ -21,9 +22,10 @@ class FilmController extends Controller
         $filmsJson = Storage::json('/public/films.json');
 
         // Read films from the database
-        $filmsDB = DB::table('films')->get();
+        // $filmsDB = DB::table('films')->get();
+        $filmsDB = Film::all();
         $filmsDB = json_decode(json_encode($filmsDB), true);
-
+        // dd($filmsDB);
         // Merge films from JSON and database
         $films = array_merge($filmsJson, $filmsDB);
 
